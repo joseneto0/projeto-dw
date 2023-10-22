@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playpen Sans', cursive;
+}
+
+main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #8ab3fb;
+}
+
+.conteiner {
+    display: grid;
+    height: 50vh;
+    max-width: 60vw;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    background-color: #002251;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.input {
+    height: 65px;
+    border-radius: 30px;
+    background-color: white;
+    border: 0;
+    text-align: center;
+}
+
+.div-btn {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    border-radius: 30px;
+    padding: 15px 20px;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    background-color: #77f984;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #58BEE6;
+}
+
+.erro {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
