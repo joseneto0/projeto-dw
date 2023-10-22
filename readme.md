@@ -13,3 +13,5 @@ Comando para inicializar o projeto:
 ```bash
   npm run dev
 ```
+
+* [Deploy](https://joseneto0.github.io/projeto-dw-front/)
