@@ -1,0 +1,22 @@
+{
+    "filesServer": [
+        {
+            "arquivo": "vagrantfile",
+            "author": "Avex"
+        },
+        {
+            "arquivo": "style.css",
+            "author": "Avex"
+        }
+    ],
+    "filesClient": [
+        {
+            "arquivo": "index.html",
+            "author": "Carlitos"
+        },
+        {
+            "arquivo": "numGatas.txt",
+            "author": "Carlitos"
+        }
+    ]
+}
