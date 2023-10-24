@@ -1,67 +1,26 @@
 {
-    "filesServer": [
-        {
-            "arquivo": "vagrantfile",
-            "author": "Avex"
-        },
-        {
-            "arquivo": "style.css",
-            "author": "Avex"
-        }
-    ],
-    "filesClient": [
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "num.txt",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "num.txt",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "num.txt",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        }
-        ,
-        {
-            "arquivo": "num.txt",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "num.txt",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        },
-        {
-            "arquivo": "index.html",
-            "author": "Carlitos"
-        }
-    ]
+  "filesServer": [
+    {
+      "id": 1,
+      "arquivo": "vagrantfile",
+      "author": "Avex"
+    },
+    {
+      "id": 2,
+      "arquivo": "request.http",
+      "author": "Avex"
+    }
+  ],
+  "filesClient": [
+    {
+      "arquivo": "Arquivo",
+      "author": "Carlinhos",
+      "id": 1
+    },
+    {
+      "arquivo": "ìndex.html",
+      "author": "Carlinhos",
+      "id": 2
+    }
+  ]
 }

@@ -4,7 +4,12 @@ let id = 1;
 
 async function clickSubmit(event){
     if (input.value == ""){
-        alert("Digite um ip antes de buscar")
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Digite um IP para o cadastro',
+            icon: 'error',
+            confirmButtonText: 'Beleza!'
+          })
     } else {
         let ip = input.value;
         let url = `https://ipinfo.io/${ip}/json?token=0ce00c5af1537e`;

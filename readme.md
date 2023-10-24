@@ -7,6 +7,7 @@ Pacotes necessários para rodar projeto:
   npm install
   npm install bootstrap
   npm install json-server
+  npm install sweetalert2
 ```
 
 Comando para inicializar o projeto:
