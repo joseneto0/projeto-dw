@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #6f6f6f5f;
+    background-color: #909090;
 }
 
 main {
@@ -49,7 +49,7 @@ main {
 
 .right {
     display: grid;
-    background-color: black;
+    background-color: #5E5E5E;
     justify-content: center;
     grid-template-rows: 1fr 5fr 0.5fr;
     border-radius: 0 20px 20px 0;
