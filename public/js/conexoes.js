@@ -2,7 +2,7 @@ const input = document.querySelector("#inputIpAddress");
 let ips = [];
 let id = 1;
 
-async function clickSubmit(event){
+function clickSubmit(event){
     if (input.value == ""){
         Swal.fire({
             title: 'Erro!',
@@ -12,22 +12,16 @@ async function clickSubmit(event){
           })
     } else {
         let ip = input.value;
-        let url = `https://ipinfo.io/${ip}/json?token=0ce00c5af1537e`;
-        event.preventDefault();
-        fetch(url).then(
-            (response) => response.json()
-        ).then(
-            (jsonResponse) => insert(jsonResponse)
-        )
+        insert(ip);
     }
 }
 
-function insert(json){
-    let ip = ipToString(json.ip);
+function insert(ipN){
+    let ip = ipToString(ipN);
     if (!onTable(ip)){
         const tbody = document.querySelector("table tbody");
         const row = `<tr id=h${id} style="text-align: center">
-            <td>${json.ip}</td>
+            <td>${ipN}</td>
             <td id=c${id}>
             <a href="#">
                 <i onclick="handleConnect(${id}, ${ip})" class="fa fa-sign-in 1" style="font-size: 22px;"></i>
@@ -42,7 +36,12 @@ function insert(json){
         ips.push(ip);
         id++;
     } else {
-        alert("IP já cadastrado");
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Digite um IP para o cadastro',
+            icon: 'error',
+            confirmButtonText: 'Beleza!'
+        })
     }
     input.value = "";
 }

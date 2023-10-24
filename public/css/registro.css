@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #909090;
+}
+
+.conteiner {
+    display: grid;
+    height: 65vh;
+    width: 20vw;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
+    background-color: #333333ce;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.input {
+    height: 65px;
+    border-radius: 30px;
+    background-color: white;
+    border: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.div-btn {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    border-radius: 30px;
+    padding: 15px 20px;
+    width: 150px;
+    color: white;
+    text-align: center;
+    background-color: #0077FF;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    color: black;
+    background-color: #00CCFF;
+}
+
+.erro {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.criar-conta {
+    color: white; 
+    font-size: 15px;
+    cursor: pointer;
+    top: 86%; 
+    left: 50%; 
+    transform: translateX(-50%);
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.criar-conta:hover {
+    text-decoration: underline;
+}
