@@ -15,13 +15,13 @@ main {
 
 .conteiner {
     display: grid;
-    height: 65vh;
-    width: 20vw;
+    height: 45vh;
+    width: 25vw;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     grid-template-rows: 3fr 1fr 1fr 1fr;
-    background-color: #333333ce;
+    background-color: #333333;
     color: white;
     padding: 50px;
     text-align: center;
@@ -34,6 +34,7 @@ main {
 
 .input {
     height: 65px;
+    width: 300px;
     border-radius: 30px;
     background-color: white;
     border: 0;
