@@ -9,16 +9,6 @@
       "id": 2,
       "arquivo": "request.http",
       "author": "Avex"
-    },
-    {
-      "arquivo": "index.html",
-      "author": "Carlinhos",
-      "id": 3
-    },
-    {
-      "arquivo": "vagrantfile",
-      "author": "Carlinhos",
-      "id": 4
     }
   ],
   "filesClient": [
@@ -31,19 +21,18 @@
       "arquivo": "index.html",
       "author": "Carlinhos",
       "id": 2
-    },
-    {
-      "arquivo": "vagrantfile",
-      "author": "Avex",
-      "id": 3
     }
   ],
   "login": [
     {
       "usuario": "adm",
       "senha": "adm",
-      "ips": [],
       "id": 1
+    },
+    {
+      "usuario": "arroz",
+      "senha": "feijao",
+      "id": 2
     }
   ]
 }
