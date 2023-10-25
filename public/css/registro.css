@@ -10,13 +10,13 @@ main {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #909090;
+    background-color: #171515;
 }
 
 .conteiner {
     display: grid;
     height: 45vh;
-    width: 20vw;
+    max-width: 20vw;
     border-radius: 10px;
     justify-content: center;
     align-items: center;

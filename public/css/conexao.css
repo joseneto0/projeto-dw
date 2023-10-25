@@ -7,12 +7,22 @@
 }
 
 body {
-    background-color: #909090;;
+    background-color: #171515;
 }
 
 .navbar {
     font-weight: 700;
 }
+.navbar-brand {
+    color: white;
+}
+.nav-item {
+    color: white
+}
+.navbar-expand-lg {
+    background-color: #020202;
+}
+
 .cabecalhoIpTable{
     text-align: center;
 }
