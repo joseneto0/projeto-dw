@@ -26,6 +26,15 @@ async function read(id) {
     return user;
 }
 
+async function readByUsername(username){
+    const user = await prisma.user.findFirst({
+        where: {
+            username,
+        },
+    });
+
+    return user;
+}
 async function update(user, id){
     const hash = await bcrypt.hash(user.password, saltRounds);
     user.password = hash;
