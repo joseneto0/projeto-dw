@@ -1,0 +1,13 @@
+@url = http://localhost:3000;
+
+### GET
+GET {{url}}/
+
+### POST
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "username": "Zezinho",
+    "password": "teste"
+}
