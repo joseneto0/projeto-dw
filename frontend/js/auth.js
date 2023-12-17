@@ -7,17 +7,17 @@ function isAuthenticated() {
   }
   
 function getToken() {
-  return localStorage.getItem('@hostMonitor:token');
+  return localStorage.getItem('@avex:token');
 }
 
 function signin(token) {
-  localStorage.setItem('@hostMonitor:token', token);
+  localStorage.setItem('@avex:token', token);
 
   window.location.href = '/conexao.html';
 }
 
 function signout() {
-  localStorage.removeItem('@hostMonitor:token');
+  localStorage.removeItem('@avex:token');
 
   window.location.href = '/index.html';
 }

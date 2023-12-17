@@ -13,10 +13,13 @@ async function logar(event){
         },
         body: JSON.stringify(user),
     }
-    const response = await fetch('/api/login', request);
-    if (response.ok){
-        location.href = "./conexao.html";
-    }
+    const { auth, token } = await (
+        await fetch('/api/login', request)
+    ).json();
+
+    if (auth){
+        Auth.signin(token);
+    } 
 }
 
   

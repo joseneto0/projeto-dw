@@ -4,7 +4,6 @@ const user = '/api';
 
 async function create(resource, data, auth = true) {
   const url = `${user}/${resource}`;
-
   const config = {
     method: 'post',
     headers: {
@@ -12,13 +11,31 @@ async function create(resource, data, auth = true) {
     },
     body: JSON.stringify(data),
   };
-
   if (auth) {
     config.headers.Authorization = `Bearer ${Auth.getToken()}`;
   }
-
   const response = await fetch(url, config);
+  return await response.json();
+}
 
+async function createIp(resource, data, auth = true) {
+
+  const url = `${user}/${resource}/`;
+  const ad = {
+    address: data.ip,
+    token: data.token
+  };
+  const config = {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(ad),
+  };
+  if (auth) {
+    config.headers.Authorization = `Bearer ${Auth.getToken()}`;
+  }
+  const response = await fetch(url, config);
   return await response.json();
 }
 
@@ -33,7 +50,6 @@ async function read(resource) {
   };
 
   const response = await fetch(url, config);
-
   return await response.json();
 }
 
@@ -69,4 +85,4 @@ async function remove(resource) {
   return await response.json();
 }
 
-export default { create, read, update, remove };
+export default { create, createIp, read, update, remove };

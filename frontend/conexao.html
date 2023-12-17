@@ -20,6 +20,9 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Conexões<span class="sr-only">(current)</span></a>
           </div>
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#" onclick="signout()">Sair<span class="sr-only">(current)</span></a>
+          </div>
         </div>
       </nav>
     <div class="container mt-4">
@@ -37,7 +40,7 @@
                             <input id="inputIpAddress" class="form-control" placeholder="IP" type="text" autocomplete="off">
                         </div>
                         <div class="col-md-3">
-                            <button onclick="clickSubmit(event)" id="btnGetIp" type="submit"
+                            <button onclick="clickSubmit()" id="btnGetIp" type="submit"
                                 class="btn btn-success w-100">Adicionar</button>
                         </div>
                     </div>
@@ -48,7 +51,6 @@
                                 <tr>
                                     <th class="cabecalhoIpTable">IP</th>
                                     <th class="cabecalhoIpTable">Connect</th>
-                                    <th class="cabecalhoIpTable">Clear</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +71,7 @@
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../js/conexoes.js"></script>
+    <script src="./js/conexoes.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

@@ -14,7 +14,7 @@ async function readAll(){
 }
 
 async function read(id) {
-    const ip = await prisma.ip.findFirst({
+    const ip = await prisma.ip.findMany({
         where: {
             id,
         },

@@ -16,10 +16,9 @@ const seed = {
   ],
 };
 
+
 async function main() {
   for (const user of seed.users) {
-    const hash = await bcrypt.hash(user.password, saltRounds);
-    user.password = hash;
     await prisma.user.create({ data: user });
   }
 }
