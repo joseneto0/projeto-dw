@@ -1,8 +1,6 @@
-const apiUrl = 'http://localhost:3000';
 async function cadastrar(){
     const usuario = document.querySelector(".usuario").value;
     const senha = document.querySelector(".senha").value;
-    
     if (usuario == "" || senha == ""){
       Swal.fire({
         title: 'Erro!',
@@ -11,25 +9,9 @@ async function cadastrar(){
         confirmButtonText: 'Beleza!'
       })
     } else if (usuario != "" && senha != ""){
-        const url = `${apiUrl}/login`;
-        const response1 = await fetch(`${url}`);
-        const data = await response1.json();
-        for (const login of data){
-            if (login.usuario == usuario){
-                Swal.fire({
-                    title: 'Usuário Inválido',
-                    text: 'Usuário em uso',
-                    icon: 'error',
-                    confirmButtonText: 'Beleza!'
-                })
-                document.querySelector(".usuario").value = "";
-                document.querySelector(".senha").value = "";
-                return;
-            }
-        }
         let login = {
-            usuario: usuario,
-            senha: senha
+            username: usuario,
+            password: senha
         }
         const config = {
             method: 'POST',
@@ -38,16 +20,13 @@ async function cadastrar(){
             },
             body: JSON.stringify(login),
         };
-        Swal.fire({
-            title: 'Sucesso!',
-            text: 'Cadastro realizado',
-            icon: 'success'
-        })
-        const response2 = await fetch(url, config);
-        setTimeout(function(){
-            window.location.href = '../../index.html';
-        }, 3000);
-        return await response2.json();
+        const response2 = await fetch('/api/registro', config);
+        if (response2.ok){
+            location.href = "./index.html";
+        }
+        
     }
     
 }
+
+window.cadastrar = cadastrar;

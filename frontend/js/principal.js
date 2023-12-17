@@ -1,6 +1,5 @@
 const apiUrl = 'http://localhost:3000';
 
-
 async function fetchData(endpoint, pos) {
   try {
     const response = await fetch(`${apiUrl}/${endpoint}`);

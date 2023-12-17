@@ -8,7 +8,6 @@ async function create(user){
     const newUser = await prisma.user.create({
         data: user
     });
-
     return newUser;
 }
 
@@ -56,4 +55,4 @@ async function remove(id){
     });
 }
 
-export default { create, readAll, read, update, remove };
+export default { create, readAll, read, readByUsername, update, remove };

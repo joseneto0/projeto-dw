@@ -6,20 +6,20 @@ function isAuthenticated() {
     }
   }
   
-  function getToken() {
-    return localStorage.getItem('@hostMonitor:token');
-  }
-  
-  function signin(token) {
-    localStorage.setItem('@hostMonitor:token', token);
-  
-    window.location.href = '/conexao.html';
-  }
-  
-  function signout() {
-    localStorage.removeItem('@hostMonitor:token');
-  
-    window.location.href = '/index.html';
-  }
-  
-  export default { isAuthenticated, getToken, signin, signout };
+function getToken() {
+  return localStorage.getItem('@hostMonitor:token');
+}
+
+function signin(token) {
+  localStorage.setItem('@hostMonitor:token', token);
+
+  window.location.href = '/conexao.html';
+}
+
+function signout() {
+  localStorage.removeItem('@hostMonitor:token');
+
+  window.location.href = '/index.html';
+}
+
+export default { isAuthenticated, getToken, signin, signout };
