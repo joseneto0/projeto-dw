@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexão Aprovada</title>
-    <link rel="stylesheet" href="./css/principal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCP Web Interface</title>
 </head>
 <body>
-    <main>
-        <div class="box">
-            <div class="left">
-                <h1 class="titulo tituloLeft">Cliente</h1>
-                <div class="dinamicoLeft"></div>
-                <div class="enviarReceber">
-                    <div class="enviar boxIO" onclick="enviar()">Enviar</div>
-                </div>
-            </div>
-            <div class="right">
-                <h1 class="titulo">Servidor</h1>
-                <div class="dinamicoRight"></div>
-                <div class="enviarReceber">
-                    <div class="baixar boxIO" onclick="baixar()">Baixar</div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="../js/principal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <h1>SCP Web Interface</h1>
+  <form id="scpForm">
+    User Pass: <input type="text" id="passwd" required><br>
+    User@Ip: <input type="text" id="destinationHost" required><br>
+    Destination Path: <input type="text" id="destinationPath" required><br>
+    Options: <input type="text" id="options"><br>
+    <button type="button" onclick="executeSCP()">Execute SCP</button>
+  </form>
+  <div id="output"></div>
+  <script src="./js/principal.js" type="module"></script>
 </body>
 </html>
