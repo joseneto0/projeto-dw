@@ -1,6 +1,7 @@
 import API from './api';
 import Auth from './auth';
 const input = document.querySelector("#inputIpAddress");
+console.log(input.value);
 
 
 window.clickSubmit = clickSubmit;
@@ -9,7 +10,7 @@ window.handleConnect = handleConnect;
 
 if (Auth.isAuthenticated()){
     const token = Auth.getToken();
-    const ips= await API.read(`ips/${token}`);
+    const ips = await API.read(`ips/${token}`);
     const userId = await API.read(`user/${token}`);
     for (const ip of ips){
         if (userId == ip.userId){
@@ -18,7 +19,7 @@ if (Auth.isAuthenticated()){
             <td>${ip.address}</td>
             <td id=c${ip.id}>
             <a href="#">
-                <i onclick="handleConnect()" class="fa fa-sign-in 1" style="font-size: 22px;"></i>
+                <i onclick="handleConnect('${ip.address}')" class="fa fa-sign-in 1" style="font-size: 22px;"></i>
             </a></td>
             <td>
             </td>
@@ -53,7 +54,7 @@ async function insert(ipN){
         <td>${newIp.address}</td>
         <td id=c${newIp.id}>
         <a href="#">
-            <i onclick="handleConnect()" class="fa fa-sign-in 1" style="font-size: 22px;"></i>
+            <i onclick="handleConnect('${req.ip}')" class="fa fa-sign-in 1" style="font-size: 22px;"></i>
         </a></td>
         <td>
         </td>
@@ -62,6 +63,8 @@ async function insert(ipN){
     input.value = "";
 }
 
-function handleConnect(){
-    location.href = "./principal.html";
+function handleConnect(ip){
+    if (Auth.isAuthenticated()){
+        location.href = `./principal.html?ip=${ip}`;
+    }
 }

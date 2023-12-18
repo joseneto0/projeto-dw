@@ -1,19 +1,48 @@
-function executeSCP() {
-  const passwd = document.getElementById('passwd').value;
-  const destinationHost = document.getElementById('destinationHost').value;
-  const destinationPath = document.getElementById('destinationPath').value;
-  const options = document.getElementById('options').value;
+import Auth from './auth';
 
-  // Enviando dados para o backend
-  fetch('http://localhost:3000/scp', {
+if (!Auth.isAuthenticated()){
+  location.href = "./index.html";
+}
+
+function executeSCP() {
+  const usuario = document.getElementById("user").value;
+  const passwd = document.getElementById('passwd').value;
+  const path = document.getElementById('path').value;
+  const urlParams = new URLSearchParams(window.location.search);
+  const ip = urlParams.get('ip');
+  fetch('/api/scp', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ passwd, destination: `${destinationHost}:${destinationPath}`, options }),
+    body: JSON.stringify({ usuario, ip, passwd, path }),
   })
   .then(response => response.text())
   .then(output => {
+    
+    document.getElementById('output').innerText = output;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('output').innerText = 'Error: ' + error.message;
+  });
+}
+
+function executeLS(){
+  const usuario = document.getElementById("user").value;
+  const passwd = document.getElementById('passwd').value;
+  const urlParams = new URLSearchParams(window.location.search);
+  const ip = urlParams.get('ip');
+  fetch('/api/ls', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ usuario, ip, passwd }),
+  })
+  .then(response => response.text())
+  .then(output => {
+    console.log(output)
     document.getElementById('output').innerText = output;
   })
   .catch(error => {
@@ -23,3 +52,4 @@ function executeSCP() {
 }
 
 window.executeSCP = executeSCP;
+window.executeLS = executeLS;

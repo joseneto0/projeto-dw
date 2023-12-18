@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCP Web Interface</title>
+  <link rel="stylesheet" href="./css/principal.css">
 </head>
 <body>
   <h1>SCP Web Interface</h1>
   <form id="scpForm">
-    User Pass: <input type="text" id="passwd" required><br>
-    User@Ip: <input type="text" id="destinationHost" required><br>
-    Destination Path: <input type="text" id="destinationPath" required><br>
-    Options: <input type="text" id="options"><br>
+    <br>
+    Usuário: <input type="text" id="user" required autocomplete="off"><br>
+    Senha: <input type="password" id="passwd" required autocomplete="off"><br>
+    Caminho: <input type="text" id="path" required autocomplete="off"><br>
     <button type="button" onclick="executeSCP()">Execute SCP</button>
+    <button type="button" onclick="executeLS()">Execute TREE</button>
   </form>
   <div id="output"></div>
   <script src="./js/principal.js" type="module"></script>

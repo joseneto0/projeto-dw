@@ -62,11 +62,22 @@ router.get("/user/:token", isAuthenticated, async (req, res) => {
 });
 
 router.post('/scp', (req, res) => {
-  const { passwd, destination, options } = req.body;
+  const { usuario, ip, passwd, path } = req.body;
+  const scpCommand = `sshpass -p ${passwd} scp ${usuario}@${ip}:${path} ./arquivos`;
+  
+  exec(scpCommand, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error: ${error.message}`);
+      return res.status(500).send(error.message);
+    }
+    res.status(200).send(stdout);
+  });
+});
 
-  // Execute o comando SCP
-  const scpCommand = `sshpass -p ${passwd} scp ${options || ''} ${destination} ./arquivos`;
-
+router.post("/ls", (req, res) => {
+  const { usuario, ip, passwd } = req.body;
+  const scpCommand = `sshpass -p ${passwd} ssh ${usuario}@${ip} tree`;
+  
   exec(scpCommand, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
@@ -78,6 +89,6 @@ router.post('/scp', (req, res) => {
 
     res.status(200).send(stdout || stderr);
   });
-});
+})
 
 export default router;
