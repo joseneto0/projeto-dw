@@ -27,6 +27,8 @@ if (Auth.isAuthenticated()){
             tbody.insertAdjacentHTML("beforeend", row);
         }
     }
+} else {
+    location.href = "./index.html"
 }
 
 function clickSubmit(){

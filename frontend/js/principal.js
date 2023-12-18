@@ -20,7 +20,7 @@ function executeSCP() {
   .then(response => response.text())
   .then(output => {
     
-    document.getElementById('output').innerText = output;
+    document.getElementById('output').innerText = "Deu certo :D";
   })
   .catch(error => {
     console.error('Error:', error);
