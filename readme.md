@@ -1,5 +1,5 @@
-# FrontEnd DW - Projeto Avex SCP
-Etapa do FrontEnd da cadeira "Desenvolvimento Web", feito utilizando o Vite com JavaScript Vanilla, CSS Grid/Flex Layout, BootStrap, Json-Server.
+# FullStack - Projeto Avex SCP
+Projeto da cadeira "Desenvolvimento Web", feito utilizando o Vite com JavaScript Vanilla, Express JS, CSS Grid/Flex Layout, BootStrap.
 
 ## Descrição:
 Simplificando o uso do comando 'scp' do linux na Web.
@@ -15,17 +15,17 @@ de arquivos entre o host local e o host remoto  ou entre dois hosts remotos.
 ### Pacotes necessários para rodar projeto:
 
 ```bash
+  cd frontend
   npm install
-  npm install bootstrap
-  npm install json-server
-  npm install sweetalert2
+  cd backend
+  npm install
 ```
 
 ### Comando para inicializar o projeto:
 
 ```bash
-  npx json-server --watch db.json
+  cd frontend
   npm run dev
+  cd backend
+  node src/index.js
 ```
-
-* [Deploy](https://joseneto0.github.io/projeto-dw-front/)
